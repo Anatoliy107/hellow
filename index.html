@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://code.jquery.com/jquery-3.5.1.min.js">
+	<title></title>
+</head>
+<body>
+		<div class="wraper">
+			<div class="header">
+				<div class="header_nav">
+					<button class="b1"><a href="#vutratu1">Витрати</a> </button>
+					<button class="b2"><a href="#smallI">Бізнес</a></button>
+					<button class="b3"><a href="#kykyIIIka">Акції</a></button>
+					<button class="b4"><a href="#vverh">В верх</a></button>
+				</div>
+			</div>
+			<div class="value">
+			<table  style="border-radius: 20px; overflow: hidden; border:1px solid black; line-height: 0.9em;">
+				<tr>
+					<td><p style="text-align: center;">Імя : </p></td>
+					<td><input type="text"></td>
+					
+				</tr>
+				<tr>
+					<td><p>Професія :</p></td>
+					<td> <input type="text" id="vverh"></td>
+				</tr>
+			</table>
+			</div>
+			<div class="balance">
+				<table border="1"  >
+					<tr>
+						<td>Активний Дохід</td>
+						<td><input type="number" value="0" id="activeDohid" disabled></td>
+					</tr>
+					<tr>
+						<td>Звільнений</td>
+						<td><input type="checkbox" onchange="funyy1()" id="faire" value="0" style="text-align: center;"></td>
+					</tr>
+					<tr>
+						<td>Пасивний Дохід</td>
+						<td><input type="number" value="0" id="pasiveDohid" disabled></td>
+					</tr>
+					<tr>
+						<td>Загальний Дохід</td>
+						<td><input type="number"id="zagalDohid" value="0"disabled></td>
+					</tr>
+					<tr>
+						<td>Загальні Витрати</td>
+						<td><input type="number" id="zagalVutrat" value="0"disabled ></td>
+					</tr>
+					<tr>
+						<td>Cash flow</td>
+						<td><input type="number"id="cashFlow" value="0"disabled></td>
+					</tr>
+					
+
+				</table>
+				
+			</div>
+			<div class="borh">
+				<p style="text-align: center;">Борг</p>
+				<p style="text-align: center;"><input type="number"  style="text-align: center;" value="0" id="debt" disabled></p>
+				<div class="button">
+					<button  id="debt-increase">Взяти в борг</button>
+					<button  id="debt-decrease" >Відати борг</button>
+				</div>
+				<p style="text-align: center;" >Зарплата</p>
+				<P style="text-align: center; "><input type="number" id="zarplata"></P>
+				<p style="text-align: center;" id="vutratu1" >Витрати</p>
+				<table border="1" style="text-align: left;margin-left: 100px; ">
+						<tr>
+							<td>Оренда житла</td>
+							<td><input type="number" value="0" class="rashodu" style="text-align: center;"></td>
+						</tr>
+						<tr>
+							<td>Витрати на харчі</td>
+							<td><input type="number" value="0" class="rashodu" style="text-align: center;"></td>
+						</tr>
+						<tr>
+							<td>Витрати на одяг</td>
+							<td><input type="number" value="0" class="rashodu" style="text-align: center;"></td>
+						</tr>
+						<tr>
+							<td>Витрати на проїзд</td>
+							<td><input type="number" value="0" class="rashodu" style="text-align: center;"></td>
+						</tr>
+						<tr>
+							<td>Витрати на телефон</td>
+							<td><input type="number" value="0" class="rashodu" style="text-align: center;"></td>
+						</tr>
+
+						<tr>
+							<td>Витрати на квартиру</td>
+							<td>
+								<input type="number"id="apartament" value="0"style="text-align: center;">
+							</td>
+						</tr>
+						<tr>
+							<td>Витрати на машину:</td>
+							<td>
+								<input type="number" id="car" value="0"style="text-align: center;">
+							</td>
+						</tr>
+						<tr>
+							<td>Утримання будинку</td>
+							<td>
+								<input type="number" id="hous" value="0"style="text-align: center;">
+						</td>
+
+						</tr>
+						<tr>
+							<td>Утримання яхти</td>
+							<td>
+								<input type="number" id="yacht" value="0"style="text-align: center;">
+						</td>
+
+						</tr>
+						<tr>
+							<td>Утримання літака</td>
+							<td>
+								<input type="number"id="plane" value="0"style="text-align: center;">
+						</td>
+						</tr>
+						<tr id="kykyIIIka" >
+							<td>Діти</td>
+							<td>
+								<input type="number" id="children" value="0"style="text-align: center;">
+							</td>
+						</tr  >
+						
+					</table>
+					<table border="1" style="margin-bottom: 100px;" ><h2 style="text-align: center;">Акції</h2>
+						<tr>
+							<td><b>Код</b></td>
+							<td><strong>Kількість</strong></td>
+							<td><b>Ціна покупки</b></td>
+							<td><b>Продати</b></td>
+
+						</tr>
+						<tr>
+							<td>GC</td>
+							<td><input type="number" value="0" class="GC" style="text-align: center;"></td>
+							<td><input type="number" value="0" class="GC" style="text-align: center;"></td>
+							<td><button onclick="deleteZnachen()">Продати</button></td>
+						</tr>
+						<tr>
+							<td>ЩГП</td>
+							<td><input type="text" class="GC1"  style="text-align: center;"></td>
+							<td><input type="text" class="GC1" value="0" style="text-align: center;"></td>
+							<td><button onclick="deleteZnachen1()">Продати</button></td>
+						</tr>
+						<tr>
+							<td>ТО</td>
+							<td><input type="text"  class="GC2" style="text-align: center;"></td>
+							<td><input type="text" class="GC2"  style="text-align: center;"></td>
+							<td><button onclick="deleteZnachen2()" >Продати</button></td>
+						</tr>
+						<tr>
+							<td>CST</td>
+							<td><input type="text" class="GC3" style="text-align: center;"></td>
+							<td><input type="text" class="GC3" style="text-align: center;"></td>
+							<td><button onclick="deleteZnachen3()">Продати</button></td>
+						</tr>
+						
+					</table>
+					<p style="text-align: center; " id="smallI">Малий бізнес</p>
+					<table border="1"  class="tables">
+
+						<tr>
+							
+							<td ><input type="text" placeholder="назва"id="smalB1" ></td>
+							<td><input class="mlb" type="number"  placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr>
+						<tr>
+							
+							<td ><input type="text" placeholder="назва" ></td>
+							<td><input class="mlb" type="number"  placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr>
+						<tr>
+							
+							<td ><input type="text" placeholder="назва" ></td>
+							<td><input class="mlb" type="number"  placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr>
+						<tr>
+							
+							<td ><input type="text" placeholder="назва" ></td>
+							<td><input class="mlb" type="number"  placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr>
+						<tr>
+							
+							<td ><input type="text" placeholder="назва" ></td>
+							<td><input class="mlb" type="number"  placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr>
+						<tr>
+							
+							<td ><input type="text" placeholder="назва" ></td>
+							<td><input class="mlb" type="number"  placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr>
+						<tr>
+							
+							<td ><input type="text" placeholder="назва" ></td>
+							<td><input class="mlb" type="number"  placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr>
+						<tr>
+							
+							<td ><input type="text" placeholder="назва" ></td>
+							<td><input class="mlb" type="number"  placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr>
+						<tr>
+							
+							<td ><input type="text" placeholder="назва" ></td>
+							<td><input class="mlb" type="number" placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr>
+						<tr >
+							
+							<td ><input type="text" placeholder="назва" ></td>
+							<td><input class="mlb" type="number"  placeholder="заробляєш" value=0 style="text-align: center;"></td>
+							
+						</tr  >
+
+						
+						
+					</table>
+					<br><br>
+					<p style="text-align: center;" id="smallII">Середній бізнес</p>
+					<div class="knopkaSerB">
+					
+				</div>
+
+					<table border="1" class="tables">
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+					</table>
+					<br><br>
+					
+					
+				
+				<p style="text-align: center;" id="smallIII">Великий бізнес</p>
+					<table border="1" class="tables">
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" id="bigB1" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" id="bigB2" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" id="bigB3" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" id="bigB4" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" id="bigB5" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+						<tr >
+							
+							<td><input type="text" placeholder="назва" ></td>
+							<td><input type="number" class="mlb" id="bigB6" placeholder="заробляєш" value="0" style="text-align: center;" ></td>
+							
+						</tr >
+					</table><br><br><br><br>
+
+			</div>
+			<div class="foter">
+				<button onclick="funyy1()">Порахувати</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="js.js" defer></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	
+</body>
+</html>
