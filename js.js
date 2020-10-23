@@ -207,10 +207,10 @@ function myParseInt(value){
         debtInput.value = debt;
     }
     document.getElementById('debt-increase').addEventListener('click', function () {
-        debtChange('Сколько Вы хотите взять в долг?', 'increase');
+        debtChange('Скільки ви хочете взяти в богр?', 'increase');
     });
     document.getElementById('debt-decrease').addEventListener('click', function () {
-        debtChange('Сколько Вы хотите выплотить?', 'decrease');
+        debtChange('Скільки ви хочете ввідати?', 'decrease');
     });
     function BezZarplatu(){
 
