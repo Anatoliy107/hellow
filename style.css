@@ -52,25 +52,25 @@ a{
 .b1{
 	position: fixed;
 	top: 0;
-	margin-left: 30%;
+	margin-left: 10%;
 }
 
 .b2{
 	position: fixed;
 	top: 0px;
-	margin-left: 40%;
+	margin-left: 30%;
 
 }
 
 .b3{
 position: fixed;
 top: 0;
-margin-left: 50%;
+margin-left: 60%;
 }
 .b4{
 	position: fixed;
 	top: 0;
-margin-left:  60%;
+margin-left:  90%;
 }
 .balance{
 	margin-left: 100px;
